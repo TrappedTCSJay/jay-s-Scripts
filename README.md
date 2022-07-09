@@ -1,2 +1,3 @@
-# jay-s-Scripts
-OpenSourced Scripts 
+penis scripts
+My OpenSource Scripts.
+Don't Skid Please.
