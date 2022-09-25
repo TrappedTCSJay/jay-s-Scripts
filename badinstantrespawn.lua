@@ -1,16 +1,24 @@
 --[[
-Instant Respawn
-Date: 7/9/2022.
-By IKillGlitches#7079.
-Just a quick instant respawn if ur a script dev dont bully for how TERRIBLE it is.
+Updated Instant respawn it's less bad now 
+Date 9/24/2022. 
+By qxyz#3000
 ]]
-getgenv().res = true;
-while getgenv().res == true do 
-  client = game.Players.LocalPlayer
-  client.Backpack.ServerTraits.ChatStart:FireServer(workspace.FriendlyNPCs:FindFirstChild("Hair Stylist"))
-  task.wait(.3)
-  client.Backpack.ServerTraits.ChatAdvance:FireServer({"Yes"})
-  task.wait(.3)
-  client.Backpack.HairScript.RemoteEvent:FireServer("woah")
-  task.wait(.5)
-  end
+m = game.Players.LocalPlayer:GetMouse()
+
+m.KeyDown:connect(function(key)
+    if key == "n" then
+b = Workspace.FriendlyNPCs["Hair Stylist"]
+game.Players.LocalPlayer.Backpack.ServerTraits["ChatStart"]:FireServer(b)
+task.wait(.3)
+game.Players.LocalPlayer.Backpack.ServerTraits.ChatAdvance:FireServer({'Yes'});
+task.wait(.3)
+ R = game.Players.LocalPlayer.Backpack.ServerTraits['ChatAdvance']
+while task.wait() do
+pcall(function()
+
+ args = {
+    [1] = "woah"
+}
+
+game:GetService("Players").LocalPlayer.Backpack.HairScript.RemoteEvent:FireServer(unpack(args))
+end) end end end)
