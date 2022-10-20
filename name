@@ -1,0 +1,14 @@
+_G.Jay = " soul 3000"
+_G.NiceMessage= "W TCS"
+
+local args = {
+  [1] = _G.Jay,
+  [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
+wait(2)
+local args = {
+  [1] = _G.NiceMessage,
+  [2] = "All"
+}
+game:GetService("ReplicatedStorage").DefaultChatSystemChatEvents.SayMessageRequest:FireServer(unpack(args))
